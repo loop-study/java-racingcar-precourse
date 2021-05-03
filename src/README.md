@@ -65,45 +65,45 @@ pobi, honux가 최종 우승했습니다.</code></pre>
 
 ## 게임 진행 순서
 1. 자동차 이름을 입력받는다. 쉼표(,)를 기준으로 구분
-- 공백 여부 확인
-- 5글자 확인
+   - 공백 여부 확인
+   - 5글자 확인
 2. 진행 횟수를 입력한다.
-- 1 이상 입력받아야한다.
+   - 1 이상 입력받아야한다.
 3. 게임이 진행된다.
-- 진해 횟수마다 자동차가 움직인다
-    - 움직임은 랜덤이다.
-        - 0~3 stop
-        - 4~9 move
-- 게임 결과를 반환한다.
+   - 진해 횟수마다 자동차가 움직인다
+   - 움직임은 랜덤이다.
+      - 0~3 stop
+      - 4~9 move
+   - 게임 결과를 반환한다.
 4. 진행된 결과를 출력한다.
-- 진행 횟수마다 결과를 출력한다.
+   - 진행 횟수마다 결과를 출력한다.
 5. 우승자를 노출한다.
-- 최대 이동거리를 찾는다.
-- 우승자를 찾는다.
+   - 최대 이동거리를 찾는다.
+   - 우승자를 찾는다.
 
 
 ## 역할
 ### 도메인
 1. Cars : 출전하는 자동차들
-- List < Car > cars
+   - List < Car > cars
 2. Car : 자동차
-- Name name
-- Distacne distance
+   - Name name
+   - Distacne distance
 3. Round : 진행 횟수
-- round
+   - round
 4. Name : 자동차 이름
-- name
+   - name
 5. Distance : 이동 거리
-- distance
+   - distance
 6. Records : 진행 결과들
-- List< Record > records
+   - List< Record > records
 7. Record : 진행 결과
-- Cars cars
+   - Cars cars
 8. MoveStrategy : 자동차 이동 제어
 
 
 ### UI
 1. InputView : 자동차이름과 진행 상황 입력
-- Cars 생성
-- Round 생성
+   - Cars 생성
+   - Round 생성
 2. ResultView : 게임 결과 출력
