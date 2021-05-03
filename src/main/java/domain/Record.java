@@ -26,12 +26,16 @@ public class Record {
 
         int maxDistance = this.maxDistance();
         for (int i = 0; i < cars.size(); i++) {
-            if (cars.get(i).isMaxDistance(maxDistance)) {
-                winners.add(cars.get(i));
-            }
+            addWinner(winners, maxDistance, cars.get(i));
         }
 
         return winners;
+    }
+
+    private void addWinner(List<Car> winners, int maxDistance, Car car) {
+        if (car.isMaxDistance(maxDistance)) {
+            winners.add(car);
+        }
     }
 
     public List<Car> cars() {
