@@ -1,5 +1,7 @@
 package domain;
 
+import strategy.Strategy;
+
 public class Car {
 
     private final Name name;
@@ -18,8 +20,11 @@ public class Car {
         this.distance = distance;
     }
 
-    public Car move() {
-        return new Car(name, distance.add());
+    public Car move(Strategy move) {
+        if (move.isMoveable()) {
+            return new Car(name, distance.add());
+        }
+        return this;
     }
 
     public Distance distance() {
