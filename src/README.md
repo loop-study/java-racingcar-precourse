@@ -125,7 +125,7 @@ pobi, honux가 최종 우승했습니다.</code></pre>
 - [x] 매라운드 결과 (Record)
    - [x] List<Car> 받아서 생성
    - [x] 최대 이동 거리 확인
-   - 우승자 확인
+   - [x] 우승자 확인
 - 매라운드 결과들 (Records)
 - 입력 UI
    - 이름 입력, Cars 반환
