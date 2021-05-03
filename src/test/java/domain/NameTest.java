@@ -1,11 +1,15 @@
 package domain;
 
-import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import org.assertj.core.api.Assertions;
+
+import static org.assertj.core.api.Assertions.*;
+
+@DisplayName("이름")
 public class NameTest {
 
     @ParameterizedTest
@@ -14,6 +18,14 @@ public class NameTest {
     public void nameLengthTest(String inputText) throws Exception {
         Name name = new Name(inputText);
 
-        Assertions.assertThat(name.value()).isEqualTo(inputText);
+        assertThat(name.value()).isEqualTo(inputText);
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"", "loopst"})
+    @DisplayName("이름 0글자, 6글자 이상 에러 확인")
+    public void nameLengthError(String inputText) throws Exception {
+        assertThatThrownBy(() -> new Name(inputText))
+                .isInstanceOf(IllegalArgumentException.class);
     }
 }
