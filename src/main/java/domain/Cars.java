@@ -2,6 +2,7 @@ package domain;
 
 import strategy.MoveStrategy;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,9 +20,11 @@ public class Cars {
     }
 
     public Cars movedCars() {
-        List<Car> movedCars = cars.stream()
-                                    .map(car -> car.move(new MoveStrategy()))
-                                    .collect(Collectors.toList());
+        List<Car> movedCars = new ArrayList<>();
+
+        for (int i = 0; i < cars.size(); i++) {
+            movedCars.add(cars.get(i).move(new MoveStrategy()));
+        }
 
         return new Cars(movedCars);
     }
@@ -31,8 +34,13 @@ public class Cars {
     }
 
     private static List<Car> stringToListCar(String inputText) {
-        return Arrays.stream(inputText.split(","))
-                .map(Car::new)
-                .collect(Collectors.toList());
+        String[] names = inputText.split(",");
+        List<Car> result = new ArrayList<>();
+
+        for (int i = 0; i < names.length; i++) {
+            result.add(new Car(names[i]));
+        }
+
+        return result;
     }
 }
