@@ -14,7 +14,7 @@ public class CarTest {
     @DisplayName("이동 확인")
     public void car() throws Exception {
         Car car = new Car(NameTest.STUDY);
-        car.move();
-        assertThat(car.distance()).isEqualTo(DistanceTest.ONE.value());
+        car = car.move();
+        assertThat(car.distance()).isEqualTo(DistanceTest.ONE);
     }
 }
