@@ -3,9 +3,7 @@ package domain;
 import strategy.MoveStrategy;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Cars {
 
@@ -27,6 +25,10 @@ public class Cars {
         }
 
         return new Cars(movedCars);
+    }
+
+    public Record record() {
+        return new Record(cars);
     }
 
     public List<Car> cars() {

@@ -30,4 +30,16 @@ public class Car {
     public Distance distance() {
         return distance;
     }
+
+    public int maxDistance(int maxDistance) {
+        return distance.maxDistance(maxDistance);
+    }
+
+    public boolean isMaxDistance(int maxDistance) {
+        return distance.isMaxDistance(maxDistance);
+    }
+
+    public Name name() {
+        return name;
+    }
 }

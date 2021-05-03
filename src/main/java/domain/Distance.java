@@ -35,4 +35,15 @@ public class Distance {
     public int hashCode() {
         return Objects.hash(distance);
     }
+
+    public int maxDistance(int maxDistance) {
+        if (maxDistance < distance) {
+            return distance;
+        }
+        return maxDistance;
+    }
+
+    public boolean isMaxDistance(int maxDistance) {
+        return maxDistance == distance;
+    }
 }

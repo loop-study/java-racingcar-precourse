@@ -1,5 +1,6 @@
 package domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Record {
@@ -18,6 +19,19 @@ public class Record {
         }
 
         return maxDistance;
+    }
+
+    public List<Car> winners() {
+        List<Car> winners = new ArrayList<>();
+
+        int maxDistance = this.maxDistance();
+        for (int i = 0; i < cars.size(); i++) {
+            if (cars.get(i).isMaxDistance(maxDistance)) {
+                winners.add(cars.get(i));
+            }
+        }
+
+        return winners;
     }
 
     public List<Car> cars() {
