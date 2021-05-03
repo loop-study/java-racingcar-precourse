@@ -9,6 +9,7 @@ import static org.assertj.core.api.Assertions.*;
 
 @DisplayName("이동거리")
 public class DistanceTest {
+    static final Distance ZERO = new Distance();
     static final Distance ONE = new Distance(1);
 
     @ParameterizedTest

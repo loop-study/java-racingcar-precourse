@@ -12,9 +12,17 @@ public class CarTest {
 
     @Test
     @DisplayName("이동 확인")
-    public void car() throws Exception {
+    public void movedCar() throws Exception {
         Car car = new Car(NameTest.STUDY);
         car = car.move(() -> true);
         assertThat(car.distance()).isEqualTo(DistanceTest.ONE);
+    }
+
+    @Test
+    @DisplayName("이동 안함 확인")
+    public void noneMovedCar() throws Exception {
+        Car car = new Car(NameTest.STUDY);
+        car = car.move(() -> false);
+        assertThat(car.distance()).isEqualTo(DistanceTest.ZERO);
     }
 }
