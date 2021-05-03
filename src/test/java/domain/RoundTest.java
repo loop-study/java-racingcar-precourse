@@ -26,4 +26,11 @@ public class RoundTest {
         round = round.next();
         assertThat(round.isEnd()).isTrue();
     }
+
+    @Test
+    @DisplayName("음수는 에러")
+    public void minusRangeException() throws Exception {
+        assertThatThrownBy(() -> new Round(-1))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
 }
