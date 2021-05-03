@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.*;
 public class RoundTest {
 
     @ParameterizedTest
-    @ValueSource(ints = {1,2,3})
+    @ValueSource(ints = {2,3,4})
     @DisplayName("진행 확인")
     public void playTest(int count) throws Exception {
         Round round = new Round(count);
