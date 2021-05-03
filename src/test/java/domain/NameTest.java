@@ -5,12 +5,11 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import org.assertj.core.api.Assertions;
-
 import static org.assertj.core.api.Assertions.*;
 
 @DisplayName("이름")
 public class NameTest {
+    static final Name STUDY = new Name("study");
 
     @ParameterizedTest
     @ValueSource(strings = {"s", "st", "stu", "stud", "study"})
