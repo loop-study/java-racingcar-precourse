@@ -114,8 +114,8 @@ pobi, honux가 최종 우승했습니다.</code></pre>
     - [x] 길이 예외 시 에러 처리
 - [x] 이동거리 (Distance)
     - [x] 한칸씩 이동하기
-- 자동차 (Car)
-   - 랜덤값으로 이동이 가능 (MoveStrategy 사용)
+- [x] 자동차 (Car)
+   - [x] 랜덤값으로 이동이 가능 (MoveStrategy 사용)
 - 자동차들 (Cars)
    - 자동차 이동하기
    - 매라운드 결과 Record 로 반환
