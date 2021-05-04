@@ -1,5 +1,6 @@
 package domain;
 
+import java.util.Collections;
 import java.util.List;
 
 public class Records {
@@ -11,6 +12,6 @@ public class Records {
     }
 
     public List<Record> records() {
-        return records;
+        return Collections.unmodifiableList(records);
     }
 }

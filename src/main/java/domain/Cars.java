@@ -3,6 +3,7 @@ package domain;
 import strategy.MoveStrategy;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Cars {
@@ -32,7 +33,7 @@ public class Cars {
     }
 
     public List<Car> cars() {
-        return cars;
+        return Collections.unmodifiableList(cars);
     }
 
     private static List<Car> stringToListCar(String inputText) {
