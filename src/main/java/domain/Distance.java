@@ -23,6 +23,17 @@ public class Distance {
         return distance;
     }
 
+    public int compareMaxDistance(int maxDistance) {
+        if (maxDistance < distance) {
+            return distance;
+        }
+        return maxDistance;
+    }
+
+    public boolean isMaxDistance(int maxDistance) {
+        return maxDistance == distance;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -34,16 +45,5 @@ public class Distance {
     @Override
     public int hashCode() {
         return Objects.hash(distance);
-    }
-
-    public int maxDistance(int maxDistance) {
-        if (maxDistance < distance) {
-            return distance;
-        }
-        return maxDistance;
-    }
-
-    public boolean isMaxDistance(int maxDistance) {
-        return maxDistance == distance;
     }
 }

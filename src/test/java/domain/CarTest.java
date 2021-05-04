@@ -12,7 +12,7 @@ public class CarTest {
     @DisplayName("이동 확인")
     public void movedCar() throws Exception {
         Car car = new Car(NameTest.STUDY);
-        car = car.move(() -> true);
+        car = car.movedCar(() -> true);
         assertThat(car.distance()).isEqualTo(DistanceTest.ONE);
     }
 
@@ -20,7 +20,7 @@ public class CarTest {
     @DisplayName("이동 안함 확인")
     public void noneMovedCar() throws Exception {
         Car car = new Car(NameTest.STUDY);
-        car = car.move(() -> false);
+        car = car.movedCar(() -> false);
         assertThat(car.distance()).isEqualTo(DistanceTest.ZERO);
     }
 }

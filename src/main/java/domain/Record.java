@@ -13,26 +13,22 @@ public class Record {
 
     public int maxDistance() {
         int maxDistance = 0;
-
         for (int i = 0; i < cars.size(); i++) {
-            maxDistance = cars.get(i).maxDistance(maxDistance);
+            maxDistance = cars.get(i).compareMaxDistance(maxDistance);
         }
-
         return maxDistance;
     }
 
     public List<Car> winners() {
         List<Car> winners = new ArrayList<>();
-
         int maxDistance = this.maxDistance();
         for (int i = 0; i < cars.size(); i++) {
-            addWinner(winners, maxDistance, cars.get(i));
+            addMaxDistanceCar(winners, maxDistance, cars.get(i));
         }
-
         return winners;
     }
 
-    private void addWinner(List<Car> winners, int maxDistance, Car car) {
+    private void addMaxDistanceCar(List<Car> winners, int maxDistance, Car car) {
         if (car.isMaxDistance(maxDistance)) {
             winners.add(car);
         }

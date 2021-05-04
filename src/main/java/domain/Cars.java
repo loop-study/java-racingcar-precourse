@@ -21,13 +21,13 @@ public class Cars {
         List<Car> movedCars = new ArrayList<>();
 
         for (int i = 0; i < cars.size(); i++) {
-            movedCars.add(cars.get(i).move(new MoveStrategy()));
+            movedCars.add(cars.get(i).movedCar(new MoveStrategy()));
         }
 
         return new Cars(movedCars);
     }
 
-    public Record record() {
+    public Record toRecord() {
         return new Record(cars);
     }
 

@@ -20,7 +20,7 @@ public class Car {
         this.distance = distance;
     }
 
-    public Car move(Strategy move) {
+    public Car movedCar(Strategy move) {
         if (move.isMoveable()) {
             return new Car(name, distance.add());
         }
@@ -31,8 +31,8 @@ public class Car {
         return distance;
     }
 
-    public int maxDistance(int maxDistance) {
-        return distance.maxDistance(maxDistance);
+    public int compareMaxDistance(int maxDistance) {
+        return distance.compareMaxDistance(maxDistance);
     }
 
     public boolean isMaxDistance(int maxDistance) {

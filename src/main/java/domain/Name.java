@@ -2,7 +2,7 @@ package domain;
 
 public class Name {
     private static final String NAME_LENGTH_MESSAGE = "자동차 이름은 1 ~ 5글자 입니다.";
-    private static final int MAX_LENGTH = 5;
+    private static final int NAME_MAX_LENGTH = 5;
 
     private final String name;
 
@@ -17,7 +17,7 @@ public class Name {
 
     private void validNameLength(String name) {
         if (name.isEmpty()
-                || name.length() > MAX_LENGTH) {
+                || name.length() > NAME_MAX_LENGTH) {
             throw new IllegalArgumentException(NAME_LENGTH_MESSAGE);
         }
     }
