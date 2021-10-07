@@ -2,6 +2,7 @@ package racinggame.controller;
 
 import racinggame.domain.Cars;
 import racinggame.domain.MoveStrategy;
+import racinggame.domain.Round;
 import racinggame.ui.InputView;
 import racinggame.ui.OutputView;
 
@@ -16,5 +17,6 @@ public class RacingController {
 
     public void run() {
         Cars cars = new Cars(inputView.inputCarNames(), new MoveStrategy());
+        Round round = new Round(inputView.inputRound());
     }
 }
