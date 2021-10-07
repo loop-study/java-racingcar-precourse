@@ -16,6 +16,12 @@ public class Cars {
         this.cars = createCars(carNames, strategy);
     }
 
+    public void move() {
+        for (Car car : cars) {
+            car.move();
+        }
+    }
+
     private List<Car> createCars(List<String> carNames, Strategy strategy) {
         List<Car> cars = new ArrayList<>();
         for (String carName : carNames) {

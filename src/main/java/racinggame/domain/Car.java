@@ -12,7 +12,6 @@ public class Car {
 
     public Car(String carName, Strategy strategy) {
         validationCarName(carName);
-
         this.carName = carName;
         this.strategy = strategy;
         this.distance = 0;
@@ -29,7 +28,7 @@ public class Car {
     }
 
     private void validationCarName(String carName) {
-        if (!ValidationUtils.validName(carName)) {
+        if (!ValidationUtils.validCarName(carName)) {
             throw new IllegalArgumentException(ERROR_CAR_NAME_MESSAGE);
         }
     }
