@@ -13,4 +13,6 @@ public class CarsTest {
         Cars cars = new Cars(Arrays.asList(inputCarNames.split(",")), new MoveStrategy());
         assertThat(cars).isNotNull();
     }
+
+
 }
