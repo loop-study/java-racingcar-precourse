@@ -17,14 +17,6 @@ public class CarTest {
         assertThat(car).isNotNull();
     }
 
-    @ParameterizedTest
-    @ValueSource(strings = {"abcdef"})
-    @NullAndEmptySource
-    void 자동차_이름_예외확인(String name) {
-        assertThatIllegalArgumentException()
-                .isThrownBy(() -> new Car(name, new MoveStrategy()));
-    }
-
     @Test
     void 자동차_전진() {
         Car car = new Car("자동차", new FakeMoveStrategy());
