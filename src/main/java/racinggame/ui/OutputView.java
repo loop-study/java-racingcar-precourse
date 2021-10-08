@@ -4,15 +4,19 @@ import racinggame.domain.Car;
 import racinggame.domain.Cars;
 import racinggame.domain.RecordDTO;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class OutputView {
-    private static final String PRINT_CAR_BOARD = "%5s : %s";
+    private static final String PRINT_CAR_BOARD = "%s : %s";
+    private static final String PRINT_WINNERS = "최종 우승자는 %s 입니다";
 
     public void printRacingBoard(List<RecordDTO> records) {
         for (RecordDTO record : records) {
             printRoundBoard(record.getRecord());
         }
+
+        printRacingWinner(records.get(records.size()-1).getRecord());
     }
 
     private void printRoundBoard(Cars record) {
@@ -28,5 +32,18 @@ public class OutputView {
             stringBuilder.append("-");
         }
         return stringBuilder.toString();
+    }
+
+    private void printRacingWinner(Cars record) {
+        List<Car> winners = record.getWinners();
+        System.out.println(String.format(PRINT_WINNERS, winnerCarNames(winners)));
+    }
+
+    private String winnerCarNames(List<Car> winners) {
+        List<String> result = new ArrayList<>();
+        for (Car winner : winners) {
+            result.add(winner.getCarName());
+        }
+        return String.join(",", result);
     }
 }

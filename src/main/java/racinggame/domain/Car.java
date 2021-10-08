@@ -3,6 +3,8 @@ package racinggame.domain;
 import racinggame.strategy.Strategy;
 import racinggame.utils.ValidationUtils;
 
+import java.util.Objects;
+
 public class Car {
     private static final String ERROR_CAR_NAME_MESSAGE = "자동차 이름이 잘못되었습니다.";
 
@@ -42,5 +44,9 @@ public class Car {
         if (!ValidationUtils.validCarName(carName)) {
             throw new IllegalArgumentException(ERROR_CAR_NAME_MESSAGE);
         }
+    }
+
+    public boolean isMaxDistance(int distance) {
+        return this.distance == distance;
     }
 }

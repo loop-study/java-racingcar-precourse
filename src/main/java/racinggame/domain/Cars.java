@@ -47,4 +47,27 @@ public class Cars {
             throw new IllegalArgumentException(ERROR_CARS_SIZE_MESSAGE);
         }
     }
+
+    public List<Car> getWinners() {
+        int maxDistance = maxDistance();
+        List<Car> result = new ArrayList<>();
+        for (Car car : cars) {
+            addWinner(maxDistance, result, car);
+        }
+        return result;
+    }
+
+    private void addWinner(int maxDistance, List<Car> result, Car car) {
+        if (car.isMaxDistance(maxDistance)) {
+            result.add(car);
+        }
+    }
+
+    private int maxDistance() {
+        int maxDistance =cars.get(0).getDistance();
+        for (int i = 1; i < cars.size(); i++) {
+            maxDistance = Math.max(maxDistance, cars.get(1).getDistance());
+        }
+        return maxDistance;
+    }
 }
