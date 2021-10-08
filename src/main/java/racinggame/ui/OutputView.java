@@ -2,17 +2,17 @@ package racinggame.ui;
 
 import racinggame.domain.Car;
 import racinggame.domain.Cars;
-import racinggame.domain.RecordDTO;
+import racinggame.domain.Record;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class OutputView {
     private static final String PRINT_CAR_BOARD = "%s : %s";
-    private static final String PRINT_WINNERS = "최종 우승자는 %s 입니다";
+    private static final String PRINT_WINNERS = "최종 우승자는 %s 입니다.";
 
-    public void printRacingBoard(List<RecordDTO> records) {
-        for (RecordDTO record : records) {
+    public void printRacingBoard(List<Record> records) {
+        for (Record record : records) {
             printRoundBoard(record.getRecord());
         }
 
