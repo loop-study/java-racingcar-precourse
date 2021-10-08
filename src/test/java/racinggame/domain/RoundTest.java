@@ -21,4 +21,17 @@ class RoundTest {
         assertThatIllegalArgumentException()
                 .isThrownBy(() -> new Round(round));
     }
+
+    @Test
+    void 라운드_진행() {
+        Round round = new Round(1);
+        assertThat(round.next()).isTrue();
+    }
+
+    @Test
+    void 라운드_종료() {
+        Round round = new Round(1);
+        round.next();
+        assertThat(round.next()).isFalse();
+    }
 }

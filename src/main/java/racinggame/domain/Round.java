@@ -4,8 +4,9 @@ import racinggame.utils.ValidationUtils;
 
 public class Round {
     private static final String ERROR_MIN_ROUND_MESSAGE = "마이너스 라운드는 불가능합니다.";
+    private static final Integer LAST_ROUND = 0;
 
-    private final int round;
+    private int round;
 
     public Round(int round) {
         validationRound(round);
@@ -16,5 +17,17 @@ public class Round {
         if (!ValidationUtils.validRound(round)) {
             throw new IllegalArgumentException(ERROR_MIN_ROUND_MESSAGE);
         }
+    }
+
+    public boolean next() {
+        if (isLastRound()) {
+            return false;
+        }
+        round--;
+        return true;
+    }
+
+    private boolean isLastRound() {
+        return round <= LAST_ROUND;
     }
 }
