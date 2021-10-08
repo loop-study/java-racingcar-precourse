@@ -1,9 +1,9 @@
 package racinggame.domain;
 
-public class RecordDTO {
+public class Record {
     Cars record;
 
-    public RecordDTO(Cars record) {
+    public Record(Cars record) {
         this.record = record;
     }
 
