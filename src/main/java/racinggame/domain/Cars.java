@@ -16,10 +16,17 @@ public class Cars {
         this.cars = createCars(carNames, strategy);
     }
 
-    public void move() {
+    private Cars(List<Car> moveCars) {
+        this.cars = moveCars;
+    }
+
+    public Cars move() {
+        List<Car> moveCars = new ArrayList<>();
         for (Car car : cars) {
-            car.move();
+            moveCars.add(car.move());
         }
+
+        return new Cars(moveCars);
     }
 
     private List<Car> createCars(List<String> carNames, Strategy strategy) {

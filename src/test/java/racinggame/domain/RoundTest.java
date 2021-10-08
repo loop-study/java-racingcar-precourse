@@ -17,7 +17,7 @@ class RoundTest {
 
     @ParameterizedTest
     @ValueSource(ints = {-1, 0})
-    void 잘못된_라운드_예외확인(int round) {
+    void 잘못된_입력값_예외확인(int round) {
         assertThatIllegalArgumentException()
                 .isThrownBy(() -> new Round(round));
     }

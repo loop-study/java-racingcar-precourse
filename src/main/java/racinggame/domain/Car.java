@@ -17,10 +17,17 @@ public class Car {
         this.distance = 0;
     }
 
-    public void move() {
+    private Car(String carName, Strategy strategy, Integer distance) {
+        this.carName = carName;
+        this.strategy = strategy;
+        this.distance = distance;
+    }
+
+    public Car move() {
         if (strategy.isMoveable()) {
             distance++;
         }
+        return new Car(carName, strategy, distance);
     }
 
     public int getDistance() {
