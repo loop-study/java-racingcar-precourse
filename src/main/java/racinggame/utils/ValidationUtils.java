@@ -7,7 +7,7 @@ public class ValidationUtils {
     private static final Integer NAME_MIN_LENGTH = 1;
     private static final Integer CARS_MIN_SIZE = 2;
     private static final Integer MIN_ROUND = 1;
-    private static final String NUMBER_REGEX = "[1-9]+";
+    private static final String NUMBER_REGEX = "[0-9]+";
 
     public static boolean validNullAndEmtpy(String text) {
         return Objects.isNull(text) || text.isEmpty();
