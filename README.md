@@ -126,12 +126,28 @@ honux : -----
   - [x] 동시 우승이면 ','를 붙여 노출한다.
   
 ## 클래스
+### domain 패키지
 - Car : 경주에 참여하는 자동차
+- CarName : 자동차 이름 관리
+- Distance : 자동차의 이동거리를 관리
 - Cars : 자동차 여러대를 관리
-- Strategy : 자동차 전진여부를 정한다.
-- ValidationUtils : 사용자가 입력한 값의 유효성을 확인 
 - Round : 경주 라운드 제어
 - Record : 게임 결과를 저장
-- InputView : 사용자가 경주 정보를 입력
-- OutputVie : 게임 결과를 출력
+- MoveStrategy : 자동차 전진 여부를 결정한다.
+  
+### strategy 패키지
+- Strategy : 자동차 전진여부 인터페이스
+  
+### utils 패키지
+- ValidationUtils : 사용자가 입력한 값의 유효성을 확인
+
+### controller 패키지
+- RacingController : 사용자의 값을 받아 자동차 경주를 실행한다.
+
+### service 패키지
+- RacingService : 자동차 경주의 비즈니스 로직을 실행한다. 
+ 
+### ui 패키지
+- InputView : 사용자가 자동차 경주의 정보를 입력한다.
+- OutputView : 자동차 경주의 결과를 보여준다.
 
