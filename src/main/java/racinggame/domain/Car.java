@@ -4,16 +4,16 @@ import racinggame.strategy.Strategy;
 
 public class Car {
     private CarName carName;
-    private int distance;
+    private Distance distance;
     private Strategy strategy;
 
     public Car(String carName, Strategy strategy) {
         this.carName = new CarName(carName);
         this.strategy = strategy;
-        this.distance = 0;
+        this.distance = new Distance();
     }
 
-    private Car(CarName carName, Strategy strategy, Integer distance) {
+    private Car(CarName carName, Strategy strategy, Distance distance) {
         this.carName = carName;
         this.strategy = strategy;
         this.distance = distance;
@@ -21,7 +21,7 @@ public class Car {
 
     public Car move() {
         if (strategy.isMoveable()) {
-            distance++;
+            distance = distance.addDistance();
         }
         return new Car(carName, strategy, distance);
     }
@@ -31,10 +31,10 @@ public class Car {
     }
 
     public int getDistance() {
-        return distance;
+        return distance.getDistance();
     }
 
     public boolean isMaxDistance(int distance) {
-        return this.distance == distance;
+        return this.distance.isMaxDistance(distance);
     }
 }
