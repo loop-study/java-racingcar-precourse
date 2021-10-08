@@ -2,10 +2,13 @@ package racinggame.controller;
 
 import racinggame.domain.Cars;
 import racinggame.domain.MoveStrategy;
+import racinggame.domain.RecordDTO;
 import racinggame.domain.Round;
 import racinggame.service.RacingService;
 import racinggame.ui.InputView;
 import racinggame.ui.OutputView;
+
+import java.util.List;
 
 public class RacingController {
     private InputView inputView;
@@ -21,6 +24,7 @@ public class RacingController {
     public void run() {
         Cars cars = new Cars(inputView.inputCarNames(), new MoveStrategy());
         Round round = new Round(inputView.inputRound());
-        racingService.play(cars, round);
+        List<RecordDTO> records = racingService.play(cars, round);
+        outputView.printRacingBoard(records);
     }
 }

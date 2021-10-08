@@ -30,6 +30,10 @@ public class Car {
         return new Car(carName, strategy, distance);
     }
 
+    public String getCarName() {
+        return carName;
+    }
+
     public int getDistance() {
         return distance;
     }

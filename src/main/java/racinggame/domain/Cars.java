@@ -3,6 +3,7 @@ package racinggame.domain;
 import racinggame.strategy.Strategy;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Cars {
@@ -27,6 +28,10 @@ public class Cars {
         }
 
         return new Cars(moveCars);
+    }
+
+    public List<Car> getCars () {
+        return Collections.unmodifiableList(cars);
     }
 
     private List<Car> createCars(List<String> carNames, Strategy strategy) {
